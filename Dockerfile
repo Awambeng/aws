@@ -8,7 +8,7 @@ WORKDIR /usr/share/nginx/html
 COPY assets .
 
 # Copy the contents of the 'src' directory to the web root
-COPY src .
+COPY src/ .
 
 # Expose the default nginx port
 EXPOSE 80
