@@ -1,0 +1,147 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Section Styles */
+.section {
+    flex: 1;
+}
+
+/* Header Section */
+.header-section {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-section h1 {
+    margin: 0;
+}
+
+.header-section nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.header-section nav ul li {
+    margin: 0 10px;
+}
+
+.header-section nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-content-section .image-section,
+.main-content-section .posts-section {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 40px;
+    padding: 40px;
+}
+
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Header Section */
+.header-section {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header-section h1 {
+    margin: 0;
+}
+
+/* Main Content Section */
+.main-content-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+}
+
+
+.main-content-section .posts-section {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+.main-content-section .posts-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main-content-section .posts-section .item {
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+}
+
+.main-content-section .posts-section .item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.main-content-section .posts-section .item h3 {
+    margin-top: 10px;
+}
+
+.main-content-section .posts-section .item p {
+    margin-top: 5px;
+}
+
+.main-content-section .about-section {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main-content-section .about-section img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+
+ /* Footer Section */
+ .footer-section {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .footer-section p {
+    margin: 0;
+  }
