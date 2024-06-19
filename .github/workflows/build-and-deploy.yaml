@@ -16,8 +16,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-      with:
-        node-version: '20'
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v2
@@ -54,3 +52,4 @@ jobs:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
         service-name: bolan-test-pro
         cluster-name: bolan-s
+        wait-for-service-stability: true
