@@ -31,12 +31,14 @@ jobs:
           docker login --username ${{ secrets.ECR_USERNAME }} --password ${{ secrets.ECR_PASSWORD }} ${{ secrets.ECR_REGISTRY }}
 
       - name: Build, tag, and push image to Amazon ECR
+        id: build-image
         env:
           ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
             docker build -t $ECR_REGISTRY:$IMAGE_TAG .
             docker push $ECR_REGISTRY:$IMAGE_TAG
+            echo "image=$ECR_REGISTRY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
@@ -44,7 +46,7 @@ jobs:
         with:
           task-definition: bolan-test-project-revision2.json
           container-name: bolan-test-project-container
-          image: ${{ secrets.ECR_REGISTRY }}:${{ github.sha }}
+          image: ${{ steps.build-image.outputs.image }}
     
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
