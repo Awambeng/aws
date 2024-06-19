@@ -45,12 +45,12 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: task-definition.json
-        container-name: bolan-test-project-container
+        container-name: bolan-test-project-con
         image: ${{ secrets.ECR_REGISTRY }}:${{ github.sha }}
   
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service-name: bolan-test-project-service
-        cluster-name: bolan-test-project
+        service-name: bolan-test-pro
+        cluster-name: bolan-s
