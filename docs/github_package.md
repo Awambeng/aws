@@ -15,7 +15,7 @@ This guide provides step-by-step instructions on how to set up a GitHub Actions 
 
 # Step 2: Configure GitHub Secrets
 1. In your GitHub repository, go to the "Settings" tab.
-2. Click on the "Secrets" section in the left-hand menu.
+2. Click on the "Secrets and Variables" section in the left-hand menu and select "Actions".
 3. Create the following secrets:
 ```bash
 AWS_ACCESS_KEY_ID: Your AWS access key ID.
