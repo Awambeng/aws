@@ -28,7 +28,7 @@ jobs:
     - name: Login to Amazon ECR
       id: login-ecr
       run: |
-        docker login --username ${{ secrets.ECR_USERNAME }} --password ${{ secrets.ECR_PASSWORD }} 917848404243.dkr.ecr.eu-north-1.amazonaws.com 
+        docker login --username ${{ secrets.ECR_USERNAME }} --password ${{ secrets.ECR_PASSWORD }} ${{ secrets.ECR_REGISTRY }}
 
     - name: Build, tag, and push image to Amazon ECR
       env:
