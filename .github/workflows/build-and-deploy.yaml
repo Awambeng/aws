@@ -47,7 +47,7 @@ jobs:
         image: ${{ secrets.ECR_REGISTRY }}:${{ github.sha }}
   
     - name: Deploy Amazon ECS task definition
-      uses: aws-actions/amazon-ecs-deploy-service@v1
+      uses: BinPar/deploy-ecs-service@v1.2.9
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
         service-name: bolan-test-project-service
