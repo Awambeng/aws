@@ -2,12 +2,12 @@
     "taskDefinitionArn": "arn:aws:ecs:eu-north-1:917848404243:task-definition/bolan-test-project:2",
     "containerDefinitions": [
         {
-            "name": "bolan-test-project-con",
+            "name": "bolan-test-project-container",
             "image": "917848404243.dkr.ecr.eu-north-1.amazonaws.com/bolan-test-project:latest",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "bolan-test-project-con-80-tcp",
+                    "name": "bolan-test-project-container-80-tcp",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
