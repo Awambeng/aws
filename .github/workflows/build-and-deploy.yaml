@@ -16,7 +16,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
       with:
         node-version: '20'
 
@@ -40,3 +39,18 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY:$IMAGE_TAG .
         docker push $ECR_REGISTRY:$IMAGE_TAG
+
+    - name: Fill in the new image ID in the Amazon ECS task definition
+      id: task-def
+      uses: aws-actions/amazon-ecs-render-task-definition@v2
+      with:
+        task-definition: task-definition.json
+        container-name: bolan-test-project-container
+        image: ${{ secrets.ECR_REGISTRY }}:${{ github.sha }}
+  
+    - name: Deploy Amazon ECS task definition
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v2
+      with:
+        task-definition: ${{ steps.task-def.outputs.task-definition }}
+        service-name: bolan-test-project-service
+        cluster-name: bolan-test-project
