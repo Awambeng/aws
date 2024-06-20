@@ -15,7 +15,7 @@ jobs:
       packages: write
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -27,8 +27,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        run: |
-          docker login --username ${{ secrets.ECR_USERNAME }} --password ${{ secrets.ECR_PASSWORD }} ${{ secrets.ECR_REGISTRY }}
+        uses: aws-actions/amazon-ecr-login@v1
 
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
