@@ -55,14 +55,15 @@ jobs:
           cluster-name: bolan-test-project
           wait-for-service-stability: true
 
-      - name: Print Task Definition File
+      - name: Echo Task Definition File
         run: |
-            echo "Task Definition File: ${{ steps.task-def.outputs.task-definition }}"
-
+          echo "Task Definition File: ${{ steps.task-def.outputs.task-definition }}"
+        
       - name: Update ECS Service
         env:
           SERVICE_NAME: bolan-test-project-service
           CLUSTER_NAME: bolan-test-project
+          TASK_DEFINITION: ${{ steps.task-def.outputs.task-definition }}
         run: |
-            # Update the ECS service with the new task definition
-            aws ecs update-service --cluster $CLUSTER_NAME --service $SERVICE_NAME --task-definition ${{ steps.task-def.outputs.task-definition }}
+          # Update the ECS service with the new task definition
+          aws ecs update-service --cluster $CLUSTER_NAME --service $SERVICE_NAME --task-definition $TASK_DEFINITION
