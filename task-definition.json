@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:eu-north-1:917848404243:task-definition/bolan-test-project:11",
+    "taskDefinitionArn": "arn:aws:ecs:eu-north-1:917848404243:task-definition/bolan-test-project:10",
     "containerDefinitions": [
         {
             "name": "bolan-test-project-container",
