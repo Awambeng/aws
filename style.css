@@ -15,7 +15,7 @@ body {
 
 /* Header Section */
 .header-section {
-    background-color: #6179bd;
+    background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -64,7 +64,7 @@ body {
 
 /* Header Section */
 .header-section {
-    background-color: #6179bd;
+    background-color: #333;
     color: #fff;
     display: flex;
     justify-content: space-between;
