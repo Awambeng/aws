@@ -58,6 +58,7 @@ jobs:
       - name: Echo Task Definition File
         run: |
           echo "Task Definition File: ${{ steps.task-def.outputs.task-definition }}"
+          cat ${{ steps.task-def.outputs.task-definition }}
         
       - name: Update ECS Service
         env:
