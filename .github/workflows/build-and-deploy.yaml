@@ -1,4 +1,4 @@
-name: Build and Publish to AWS ECR.
+name: Build and Publish to AWS ECR
 
 on:
   push:
