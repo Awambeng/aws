@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:eu-north-1:917848404243:task-definition/bolan-test-project:2",
+    "taskDefinitionArn": "arn:aws:ecs:eu-north-1:917848404243:task-definition/bolan-test-project:10",
     "containerDefinitions": [
         {
             "name": "bolan-test-project-container",
@@ -36,7 +36,7 @@
     "family": "bolan-test-project",
     "executionRoleArn": "arn:aws:iam::917848404243:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 2,
+    "revision": 10,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -79,7 +79,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-06-18T17:53:06.535Z",
+    "registeredAt": "2024-06-20T06:43:30.608Z",
     "registeredBy": "arn:aws:sts::917848404243:assumed-role/AWSReservedSSO_AdministratorAccess_144e4efcf8834316/RodrickBolan.Awambeng@adorsys.com",
     "tags": []
 }
